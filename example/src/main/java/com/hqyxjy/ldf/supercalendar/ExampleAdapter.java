@@ -1,12 +1,12 @@
 package com.hqyxjy.ldf.supercalendar;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by ldf on 17/6/14.
@@ -44,13 +44,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHold
 
         ViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.text_view);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d("ViewHolder", "onClick--> position = " + getPosition());
-                }
-            });
+            textView = view.findViewById(R.id.text_view);
+            view.setOnClickListener(v -> Log.d("ViewHolder", "onClick--> position = " + getPosition()));
         }
     }
 }
